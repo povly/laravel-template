@@ -1,0 +1,161 @@
+:root {
+  --font-inter-tight: 'Inter Tight', sans-serif;
+  --font-anastasia-script: 'AnastasiaScript', sans-serif;
+  --font-bikham-cyr-script: 'Bikham Cyr Script', sans-serif;
+  --font-roboto: 'Roboto', sans-serif;
+  --font-allegretto-script-one: 'Allegretto Script One', sans-serif;
+  --font-inter: 'Inter', sans-serif;
+  --color-white: #f7f7f7;
+  --color-black: #202020;
+  --color-green: #1a8357;
+  --color-yellow: #d4b800;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.disabled {
+  pointer-events: none;
+}
+
+label {
+  cursor: pointer;
+}
+
+body {
+  font-family: var(--font-inter-tight);
+  line-height: normal;
+  font-weight: 400;
+  position: relative;
+  font-size: 16px;
+  color: var(--color-black);
+  background: var(--color-white);
+}
+
+main {
+  position: relative;
+}
+
+img,
+svg,
+picture {
+  display: flex;
+  user-select: none;
+}
+
+strong,
+b {
+  font-weight: 700;
+}
+
+.p-font-size {
+  --font-size: calc(
+    (var(--min-font-size) * 1px) +
+      (var(--max-font-size) - var(--min-font-size)) *
+      (
+        (100vw - var(--min-viewport-width) * 1px) /
+          (var(--max-viewport-width) - var(--min-viewport-width))
+      )
+  );
+
+  font-size: var(--font-size);
+}
+
+.p-width {
+  --width: calc(
+    (var(--min-width) * 1px) + (var(--max-width) - var(--min-width)) *
+      (
+        (100vw - var(--min-viewport-width) * 1px) /
+          (var(--max-viewport-width) - var(--min-viewport-width))
+      )
+  );
+
+  width: var(--width);
+}
+
+.container {
+  width: 100%;
+  z-index: 3;
+  max-width: var(--container-width, 1200px);
+  margin: 0 auto;
+  padding: 0 10px;
+  position: relative;
+}
+
+.img {
+  &_full {
+    width: 100%;
+    height: 100%;
+
+    :is(picture, img, video) {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.section {
+  padding-top: 98px;
+  position: relative;
+  overflow: hidden;
+
+  &__title {
+    font-weight: 300;
+    font-size: 72px;
+    line-height: 150%;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 2;
+
+    :is(svg, span) {
+      display: inline-flex;
+      vertical-align: top;
+    }
+
+    svg {
+      flex-shrink: 0;
+    }
+  }
+}
+
+@media screen and (width <= 1200px) {
+  body {
+    font-size: 20px;
+  }
+
+  .container {
+    max-width: 1000px;
+    padding: 0 20px;
+  }
+
+  .section {
+    &__title {
+      font-size: 81px;
+    }
+  }
+}
+
+@media screen and (width <= 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  .container {
+    padding: 0 10px;
+  }
+
+  .section {
+    padding-top: 89px;
+
+    &__title {
+      font-size: 38px;
+
+      svg {
+        width: auto;
+        height: 45px;
+      }
+    }
+  }
+}

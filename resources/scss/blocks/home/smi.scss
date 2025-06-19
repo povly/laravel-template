@@ -1,0 +1,283 @@
+/*
+@watch-file: index.scss;
+*/
+
+.h-smi {
+  padding-bottom: 236px;
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 27px;
+  }
+
+  &__title {
+    svg {
+      margin-right: -20px;
+      transform: translateY(-6px);
+    }
+  }
+
+  &__item {
+    padding: 20px 0;
+    border-bottom: 1px solid #919191;
+    height: 347px;
+    display: none;
+    gap: 20px;
+
+    &.active {
+      display: flex;
+    }
+
+    &:first-child {
+      border-top: 1px solid #919191;
+    }
+
+    &-left {
+      width: calc(100% - 892px - 20px);
+      display: flex;
+      flex-direction: column;
+    }
+
+    &-right {
+      width: 892px;
+      display: flex;
+      gap: 20px;
+    }
+
+    &-date {
+      margin-top: auto;
+      line-height: 150%;
+      text-transform: uppercase;
+    }
+
+    &-img {
+      width: 288px;
+      height: 100%;
+    }
+
+    &-text {
+      width: calc(100% - 20px - 288px);
+      display: flex;
+      flex-direction: column;
+    }
+
+    &-title {
+      font-weight: 500;
+      font-size: 25px;
+      line-height: 134%;
+      text-transform: uppercase;
+      max-width: var(--h-smi-item-title-max-width, 100%);
+    }
+
+    &-arrow {
+      margin-top: auto;
+    }
+
+    &:nth-child(9) {
+      --h-smi-item-title-max-width: 500px;
+    }
+
+    &:nth-child(10) {
+      --h-smi-item-title-max-width: 500px;
+    }
+  }
+
+  &__btn {
+    width: 377px;
+    margin: 64px auto 0;
+
+    --p-btn-transform: rotate(180deg);
+
+    &.active {
+      --p-btn-transform: rotate(0deg);
+    }
+  }
+}
+
+@media screen and (width <= 1200px) {
+  .h-smi {
+    padding-top: 64px;
+    padding-bottom: 180px;
+
+    &__title {
+      svg {
+        transform: translateY(16px);
+        height: 80px;
+        width: auto;
+      }
+    }
+
+    &__svg {
+      svg {
+        width: 68px;
+      }
+    }
+
+    &__item {
+      height: 47.786vw;
+      gap: 0;
+
+      &-left {
+        width: 0;
+      }
+
+      &-right {
+        width: 100%;
+        gap: 17px;
+      }
+
+      &-svg {
+        position: absolute;
+        bottom: 21px;
+        right: 0;
+      }
+
+      &-date {
+        display: none;
+      }
+
+      &-img {
+        width: 39.974vw;
+      }
+
+      &-text {
+        width: calc(100% - 17px - 39.974vw);
+      }
+
+      &:nth-child(n) {
+        .h-smi__item-svg {
+          img {
+            width: 121px;
+          }
+        }
+      }
+
+      &:nth-child(1) {
+        .h-smi__item-svg {
+          img {
+            width: 171px;
+          }
+        }
+      }
+
+      &:nth-child(2) {
+        .h-smi__item-svg {
+          img {
+            width: 147px;
+          }
+        }
+      }
+
+      &:nth-child(3) {
+        .h-smi__item-svg {
+          img {
+            width: 141px;
+          }
+        }
+      }
+    }
+
+    &__btn {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (width <= 768px) {
+  .h-smi {
+    padding-top: 30px;
+    padding-bottom: 80px;
+
+    &__title {
+      svg {
+        margin-right: -13px;
+        height: 40px;
+        transform: translateY(8px);
+      }
+    }
+
+    &__svg {
+      svg {
+        width: 32px;
+      }
+    }
+
+    &__top {
+      padding-bottom: 17px;
+    }
+
+    &__item {
+      padding: 10px 0;
+      height: 47.778vw;
+
+      &-title {
+        font-size: 12px;
+      }
+
+      &-right {
+        gap: 8px;
+      }
+
+      &-img {
+        width: 40vw;
+      }
+
+      &-text {
+        width: calc(100% - 8px - 40vw);
+      }
+
+      &-svg {
+        bottom: 10px;
+      }
+
+      .p-swiper {
+        &__arrow {
+          width: 30px;
+          height: 30px;
+
+          svg {
+            width: 10px;
+          }
+        }
+      }
+
+      &:nth-child(n) {
+        .h-smi__item-svg {
+          img {
+            width: 80px;
+          }
+        }
+      }
+
+      &:nth-child(1) {
+        .h-smi__item-svg {
+          img {
+            width: 80px;
+          }
+        }
+      }
+
+      &:nth-child(2) {
+        .h-smi__item-svg {
+          img {
+            width: 69px;
+          }
+        }
+      }
+
+      &:nth-child(3) {
+        .h-smi__item-svg {
+          img {
+            width: 66px;
+          }
+        }
+      }
+    }
+
+    &__btn {
+      margin-top: 30px;
+    }
+  }
+}
